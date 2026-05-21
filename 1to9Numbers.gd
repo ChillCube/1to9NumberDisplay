@@ -21,8 +21,9 @@ func _ensure_sprite() -> void: # Needs to be a seperate node, to allow animation
 
 func _ready() -> void: ## Resets scale to (1,1) and syncs the SmoothMovement target scale
 	super()
-	scale = Vector2(1,1);
-	mover.global_target_scale = Vector2(1,1);
+	scale = Vector2(1,1)
+	if mover:
+		mover.global_target_scale = Vector2(1,1)
 
 func _set_sprite_number(_number : int): ## Swaps the child Sprite2D texture to match the given digit
 	if !number_resource:
